@@ -1,4 +1,3 @@
-
 set nocompatible
 filetype off
 "---------------------------
@@ -57,22 +56,43 @@ NeoBundle 'Shougo/vimfiler'
 	"Safe Modeは要らんですよ
 	let g:vimfiler_safe_mode_by_default = 0
 
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/vimproc.vim', {
+            \ 'build' : {
+            \     'windows' : 'tools\\update-dll-mingw',
+            \     'cygwin' : 'make -f make_cygwin.mak',
+            \     'mac' : 'make -f make_mac.mak',
+            \     'linux' : 'make',
+            \     'unix' : 'gmake',
+            \    },
+            \ }
+
+
+
+
+
+
 NeoBundle 'thinca/vim-quickrun'
 
+    "flake8"
+NeoBundle "scrooloose/syntastic"
+let g:syntastic_python_checkers = ["flake8"]
 
 NeoBundle 'davidhalter/jedi-vim'
 	"docstringは表示しない
     autocmd FileType python setlocal completeopt-=preview
 NeoBundle 'vim-scripts/YankRing.vim'
 	let g:yankring_history_dir = '~/'
-NeoBundle 'scrooloose/syntastic' "文法確認 よくない
+
+
 NeoBundle 'mhinz/vim-startify'
 	let g:startify_bookmarks = [
 	 \ '~/.vimrc',
 	 \ '~/.gvimrc',
 	 \ '~/.zshrc',
 	 \ ]
-NeoBundle 'tyru/caw.vim.git'
+
+    NeoBundle 'tyru/caw.vim.git'
 	nmap <C-K> <Plug>(caw:i:toggle)
 	vmap <C-K> <Plug>(caw:i:toggle)
 
