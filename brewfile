@@ -1,0 +1,13 @@
+tap phinze/homebrew-cask || true
+tap homebrew/versions|| true
+update || true
+
+install brew-cask || true
+
+install python3 || true
+install heroku-toolbelt || true
+
+cask install dropbox || true
+cask install kindle || true
+cask install virtualbox || true
+cask install vagrant || true
